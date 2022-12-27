@@ -25,6 +25,7 @@
     "joi": "17.6.3",
     "next": "13.0.0",
     "next-connect": "0.13.0",
+    "next-sitemap": "3.1.29",
     "node-pg-migrate": "6.2.2",
     "nodemailer": "6.8.0",
     "nprogress": "0.2.0",
@@ -88,7 +89,8 @@
     "migration:dry-run": "node-pg-migrate up --dry-run --envPath ./.env -m infra/migrations",
     "migration:seed": "node infra/scripts/seed-database.js",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
